@@ -85,8 +85,8 @@ const DEFAULT_SITE_NAME = 'Website';
 const getSite = () => {
   const _default = {
     name: DEFAULT_SITE_NAME,
-    site: 'https://astronaut.github.io',
-    base: '/blog',
+    site: undefined,
+    base: '/',
     trailingSlash: false,
 
     googleSiteVerificationId: '',
