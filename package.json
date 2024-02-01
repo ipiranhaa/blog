@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
+  "name": "blog",
+  "description": "The ordinary software developer's blog",
   "version": "1.0.0-beta.15",
   "scripts": {
     "dev": "astro dev",

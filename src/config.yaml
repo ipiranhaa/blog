@@ -1,5 +1,5 @@
 site:
-  name: iPiranhaa's Blog
+  name: iPiranhaa
   site: 'https://ipiranhaa.github.io'
   base: '/blog'
   trailingSlash: false
@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: iPiranhaa's Blog
+    default: iPiranhaa
     template: '%s'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: 'The ordinary software developer blog'
   robots:
     index: true
     follow: true
@@ -44,7 +44,7 @@ apps:
 
     list:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      pathname: '' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 
