@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "description": "The ordinary software developer's blog",
+  "description": "Chronicles from the Realm of a Software Artisan",
   "version": "1.0.0-beta.15",
   "scripts": {
     "dev": "astro dev",

@@ -11,7 +11,7 @@ metadata:
   title:
     default: iPiranhaa
     template: '%s'
-  description: 'The ordinary software developer blog'
+  description: 'Chronicles from the Realm of a Software Artisan'
   robots:
     index: true
     follow: true
