@@ -8,10 +8,53 @@ tags:
   - mui
   - buddhist date picker
   - thai date picker
-metadata:
-  canonical: https://astrowind.vercel.app/astrowind-template-in-depth
 ---
 
-## To be add
+## Background
+
+In my quest for a React UI library or framework compatible with the Buddhist year specified date picker, I scoured through popular options like [react-datepicker](https://github.com/Hacker0x01/react-datepicker), [react-date-picker](https://github.com/wojtekmaj/react-date-picker), [react-bootstrap](https://react-bootstrap.netlify.app), [Ant Design](https://ant.design), and [MUI](https://mui.com). However, none seemed to offer native support.
+
+Just when hope seemed dim, I stumbled upon the [date-fns-be](https://github.com/tarzui/date-fns-be) adaptor tailored for MUI. Although initially promising, it failed to function as expected. Nevertheless, it sparked the ingenious idea of crafting a Buddhist date-fns adaptor to seamlessly integrate with MUI.
+
+Thus, the journey began to create the missing link the [date-fns-buddhist-adapter](https://github.com/ascendcorp/date-fns-buddhist-adapter). With this essential piece in place, the elusive Thai date picker finally came to fruition.
+
+## Get Started
+
+First, you need to install the dependencies
+
+```shell
+  pnpm add @mui/x-date-pickers date-fns date-fns-buddhist-adapter
+```
+
+Second, implement the code
+
+```typescript
+import { LocalizationProvider, MobileDatePicker } from '@mui/x-date-pickers'
+import AdapterDateFns from 'date-fns-buddhist-adapter'
+import { th } from 'date-fns/locale'
+import { useState } from 'react'
+
+export default function Home() {
+  const [value, setValue] = useState(new Date())
+
+  return (
+    <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={th}>
+      <MobileDatePicker
+        format="dd MMM yyyy"
+        defaultValue={value}
+        disablePast
+        onChange={(newValue: Date | null) => {
+          if (!newValue) return
+          setValue(newValue)
+        }}
+      />
+    </LocalizationProvider>
+  )
+}
+```
+
+And then you have the MUI Thai date picker! **Enjoy** 🎉
+
+For live example, please look into [ascendcorp.github.io/date-fns-buddhist-adapter](https://ascendcorp.github.io/date-fns-buddhist-adapter)
 
 [[Top]](#top)
