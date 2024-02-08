@@ -4,8 +4,7 @@ site:
   base: '/blog'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
-
+  googleSiteVerificationId: 1gBi-0RSSdqKbiUIi2m_nm72kdyzsxnygte0vXd3tMs
 # Default SEO metadata
 metadata:
   title:
@@ -66,7 +65,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: 'G-4BTYZTXWZS' # or "G-XXXXXXXXXX"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
