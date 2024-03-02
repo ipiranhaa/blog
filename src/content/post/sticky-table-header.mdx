@@ -1,0 +1,225 @@
+---
+publishDate: 2024-03-07T00:00:00Z
+title: Fixed HTML table header
+excerpt: Readability power of the large table
+category: Library
+image: ~/assets/images/posts/thai-date-picker/cover.webp
+tags:
+  - table
+  - html
+  - css
+---
+
+## Solution
+
+1. Wrap your table by a container then set max-width for fixed row header or set max-height for fixed vertical column of the table container
+2. Make your fixed cells as sticky position, increase z-index layer, and set the point to sticky with the container
+
+## Row header
+
+```css
+.container {
+  max-height: 256px;
+}
+
+.header-cell {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+```
+
+<div class="max-w-3xl max-h-56 overflow-auto">
+  <table class="text-center border-collaps">
+    <thead>
+      <tr>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Column header
+
+```css
+.container {
+  max-width: 768px;
+}
+
+.header-cell {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+}
+```
+
+<div class="max-w-3xl overflow-auto">
+  <table class="text-center border-collaps">
+    <thead>
+      <tr>
+        <th class="min-w-64 sticky left-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <td class="min-w-64 font-normal">Body</td>
+        <td class="min-w-64 font-normal">Body</td>
+        <td class="min-w-64 font-normal">Body</td>
+        <td class="min-w-64 font-normal">Body</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="sticky left-0 z-10 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-10 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-10 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-10 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-10 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Bi-direction header
+
+```css
+.container {
+  max-height: 256px;
+  max-width: 768px;
+}
+
+.row-header-cell {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.column-header-cell {
+  position: sticky;
+  left: 0;
+  z-index: 20;
+}
+
+.corner-header-cell {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 30;
+}
+```
+
+<div class="max-w-3xl max-h-56 overflow-auto">
+  <table class="text-center border-collaps">
+    <thead>
+      <tr>
+        <th class="min-w-64 sticky left-0 top-0 z-30 bg-gray-100 dark:bg-gray-800 p-3" />
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+        <th class="min-w-64 sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 p-3">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="sticky left-0 z-20 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-20 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-20 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-20 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+      <tr>
+        <th class="sticky left-0 z-20 bg-gray-100 dark:bg-gray-800">Title</th>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+        <td>Body</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
