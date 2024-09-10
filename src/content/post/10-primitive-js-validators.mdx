@@ -1,0 +1,101 @@
+---
+publishDate: 2024-09-10T00:00:00Z
+title: 10 primitive Javascript validators
+excerpt: No external tools. No custom code. Just use it.
+category: Javascript
+image: ~/assets/images/posts/10-primitive-js-validators/cover.webp
+tags:
+  - javascript
+  - validator
+---
+
+## 1. Array.isArray()
+
+One of the most straightforward methods for checking if a value is an array is through the Array.isArray() method. It returns true if the passed value is an array and false otherwise.
+
+```javascript
+Array.isArray([]); // true
+Array.isArray({}); // false
+```
+
+## 2. Number.isFinite()
+
+Use Number.isFinite() to determine whether a value is a finite number. It returns true if the value is a number and finite, otherwise false.
+
+```javascript
+Number.isFinite(42);        // true
+Number.isFinite(Infinity);  // false
+```
+
+## 3. Number.isInteger()
+
+Number.isInteger() allows you to check if a value is an integer. It returns true for integers, and false for non-integers.
+
+```javascript
+Number.isInteger(5);   // true
+Number.isInteger(5.5); // false
+```
+
+## 4. Number.isNaN()
+
+The Number.isNaN() method checks if the passed value is NaN (Not a Number). It’s a more reliable way of checking for NaN compared to the global isNaN() function.
+
+```javascript
+Number.isNaN(NaN);   // true
+Number.isNaN(42);    // false
+```
+
+## 5. Object.is()
+
+Object.is() compares two values for equality, similar to ===, but with a key difference: it treats NaN as equal to NaN.
+
+```javascript
+Object.is('foo', 'foo'); // true
+Object.is(NaN, NaN);     // true
+```
+
+## 6. String.prototype.includes()
+
+The includes() method helps you determine if one string contains another. It returns true if the string exists and false otherwise.
+
+```javascript
+'Hello World'.includes('World'); // true
+'Hello World'.includes('Foo');   // false
+```
+
+## 7. String.prototype.startsWith()
+
+You can check if a string starts with a specific substring using startsWith(). It returns true if the string begins with the given substring.
+
+```javascript
+'JavaScript'.startsWith('Java');    // true
+'JavaScript'.startsWith('Script');  // false
+```
+
+## 8. String.prototype.endsWith()
+
+Similar to startsWith(), the endsWith() method checks if a string ends with a particular substring.
+
+```javascript
+'JavaScript'.endsWith('Script'); // true
+'JavaScript'.endsWith('Java');   // false
+```
+
+## 9. Boolean()
+
+The Boolean() function converts any value to true or false. Truthy values (like 1 or a non-empty string) return true, while falsy values (like 0 or null) return false.
+
+```javascript
+Boolean(1);   // true
+Boolean(0);   // false
+```
+
+## 10. Symbol.hasInstance
+
+Symbol.hasInstance allows customization of the behavior for the instanceof operator. You can define how objects should be checked as instances of a class or constructor.
+
+```javascript
+class MyClass {}
+const instance = new MyClass();
+MyClass[Symbol.hasInstance](instance); // true
+```
