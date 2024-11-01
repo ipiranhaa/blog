@@ -1,0 +1,46 @@
+---
+publishDate: 2024-11-01T00:00:00Z
+title: Accordion by CSS grid
+excerpt: No script. No complex.
+category: CSS
+image: ~/assets/images/posts/accordion-by-css-grid/cover.webp
+tags:
+  - CSS
+  - accordion
+---
+
+## Background
+
+In developing nested accordions, a common challenge arises ensuring that the parent accordion accurately calculates its body height when a child accordion expands. Traditionally, implementing this functionality with JavaScript introduces significant complexity to the code.
+
+However, there is a straightforward solution that eliminates the need for JavaScript entirely using only CSS. The key to this approach lies in utilizing CSS Grid. Initially, the accordion body should be set with `grid-template-rows: 0fr;`. Upon toggling, this should change to `grid-template-rows: 1fr;`. This simple adjustment is all that is required.
+
+## Example
+
+<div class="w-full group">
+  <div class="dark:bg-gray-800 dark:text-white bg-gray-200 text-gray-800 font-semibold p-4 rounded-t-lg">Hover me!</div>
+  <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all dark:bg-gray-700 dark:text-white bg-gray-100 text-gray-800 rounded-b-lg">
+    <div class="overflow-hidden group-hover:p-4">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.
+      </p>
+    </div>
+  </div>
+</div>
+
+### Code Explanation
+
+```html
+<div class="group">
+  <div class="">Hover me!</div>
+  <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all">
+    <div class="overflow-hidden">
+      <p>Lorem Ipsum is simply dummy text.</p>
+    </div>
+  </div>
+</div>
+```
+
+In this example, the accordion using [tailwindcss](https://tailwindcss.com/), expands on hover, which dynamically adjusts the grid row size. This method provides a clean and efficient way to create interactive elements without the overhead of JavaScript.
